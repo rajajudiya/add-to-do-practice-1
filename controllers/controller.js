@@ -1,23 +1,23 @@
 
 
-let todoStorage = [];
+let volunteerStorage = [];
 
 const defaultController = (req, res) => {
-    res.render('index.ejs',{todos: todoStorage});
+    res.render('index.ejs',{todos: volunteerStorage});
 }
 const todoApp = (req, res) => {
 
-    let todoObj = {
-        id: todoStorage.length + 1,
+    let volunteerObj = {
+        id: volunteerStorage.length + 1,
         fullname: req.body.fullname,
         username: req.body.username,
         email: req.body.email,
         phoneno: req.body.phoneno,
         password: req.body.password
     }
-    todoStorage = [...todoStorage, todoObj];
+    volunteerStorage = [...volunteerStorage, volunteerObj];
 
-    console.log(todoObj);
+    console.log(volunteerObj);
 
     console.log("Todo");
     res.redirect('/')
@@ -28,7 +28,7 @@ const editTodoController = (req, res) =>{
     console.log(req.params);
     let {id} = req.params
     
-    let singleTodo = todoStorage.find((todo) =>{
+    let singleTodo = volunteerStorage.find((todo) =>{
         return todo.id == id
     })
     console.log("Single Todo..???", singleTodo);
@@ -43,7 +43,7 @@ const updateTodo = (req, res) => {
     let { id } = req.params;
     console.log(req.body);
 
-    const updateData = todoStorage.find((todo) => {
+    const updateData = volunteerStorage.find((todo) => {
         return todo.id = id;
     })
 

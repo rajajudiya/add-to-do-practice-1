@@ -240,37 +240,37 @@ form .gender{
     <thead>
         <tr>
             <th>#id</th>
-            <th>TodoList</th>
-            <th>Action</th>
-            <th>Action</th>
-            <th>Action</th>
-            <th>Action</th>
+            <th>Full Name</th>
+            <th>User name</th>
+            <th>E-mail</th>
+            <th>Phone No</th>
+            <th>Password</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <% todos.forEach((todoitem)=>{ %>
+        <% todos.forEach((volunteers)=>{ %>
             <tr>
                 <td>
-                    <%= todoitem.id %>
+                    <%= volunteers.id %>
                 </td>
                 <td>
-                    <%= todoitem.fullname %>
+                    <%= volunteers.fullname %>
                 </td>
                 <td>
-                    <%= todoitem.username %>
+                    <%= volunteers.username %>
                 </td>
                 <td>
-                    <%= todoitem.email %>
+                    <%= volunteers.email %>
                 </td>
                 <td>
-                    <%= todoitem.phoneno %>
+                    <%= volunteers.phoneno %>
                 </td>
                 <td>
-                    <%= todoitem.password %>
+                    <%= volunteers.password %>
                 </td>
                 <td>
-                    <a href="/editTodoController/<%= todoitem.id %>">edit</a>
+                    <a href="/editTodoController/<%= volunteers.id %>">edit</a>
                 </td>
             </tr>
             <% })%>
