@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const controll = require('../controllers/controller');
+const controller = require('../controllers/controller');
 
-router.get('/index',controll.defaultcontroller);
+router.get('/', controller.defaultController);
+router.post('/todoApp', controller.todoApp);
+router.get('/editTodoController/:id', controller.editTodoController);
+router.post('/updateTodo/:id', controller.updateTodo);
+// router.get('/deleteTodo/:id', controller.deleteTodo);
 
-module.exports = router;
+module.exports = router; 
